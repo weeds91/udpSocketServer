@@ -14,9 +14,9 @@ clients = {}
 # this is the receiving message loop 
 def connectionLoop(sock):
    while True:
-      print("LOL")
       data, addr = sock.recvfrom(1024)
       data = str(data)
+      print(data)
       if addr in clients:
          # received a heartbeat
          if 'heartbeat' in data:
