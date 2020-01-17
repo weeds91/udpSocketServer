@@ -80,7 +80,7 @@ def gameLoop(sock):
       # This sends the UPDATE (1) message to the client
       GameState = {"cmd": 1, "players": []}
       clients_lock.acquire()
-      #print (clients)
+      print (clients)
       for c in clients:
          player = {}
          #Change color
@@ -89,7 +89,7 @@ def gameLoop(sock):
          player['color'] = clients[c]['color']
          GameState['players'].append(player)
       s=json.dumps(GameState)
-      #print(s)
+      print(s)
       for c in clients:
          sock.sendto(bytes(s,'utf8'), (c[0],c[1]))
       clients_lock.release()
