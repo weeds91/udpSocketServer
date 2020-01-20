@@ -20,7 +20,7 @@ def connectionLoop(sock):
             clients[addr]['lastBeat'] = datetime.now()
       else:
          if 'connect' in data:
-			print(data)
+            print(data)
             clients[addr] = {}
             clients[addr]['lastBeat'] = datetime.now()
             clients[addr]['color'] = 0
