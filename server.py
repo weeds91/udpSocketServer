@@ -28,7 +28,6 @@ def connectionLoop(sock):
             m = json.dumps(message)
             for c in clients:
                sock.sendto(bytes(m,'utf8'), (c[0],c[1]))
-               sock.sendto(bytes(json.dumps("YOLO"),'utf8'), (c[0],c[1]))
 
 def cleanClients():
    while True:
